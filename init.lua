@@ -6,6 +6,7 @@ require("config.filetypes")
 -- Plugins
 require("plugins.mason-nvim")
 require("plugins.webdevicons-nvim")
+require("plugins.lualine")
 require("plugins.roslyn-nvim")
 require("plugins.nvim-treesitter")
 require("plugins.telescope-nvim")
