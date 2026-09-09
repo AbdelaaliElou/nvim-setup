@@ -18,7 +18,6 @@ require("mason-tool-installer").setup({
         ensure_installed = {
                 "html-lsp", -- Needed by rzls for completion and formatting
                 "roslyn", -- C# LSP
-                -- "rzls", -- Raozr LSP
                 "netcoredbg", -- .NET debugger
                 "csharpier", -- C# formatter
         },
