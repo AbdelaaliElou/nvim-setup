@@ -1,5 +1,6 @@
 -- ./init.lua
 -- Core
+require("config.global")
 require("config.filetypes")
 
 -- Plugins
