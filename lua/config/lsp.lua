@@ -13,6 +13,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
                                 vim.lsp.completion.get()
                         end)
                 end
+                
+                -- Code lens: enable() handles requesting + refreshing internally,
+                -- same pattern as completion/inlay_hint/semantic_tokens.enable().
+                -- (vim.lsp.codelens.refresh() is deprecated as of Neovim's recent
+                -- LSP module cleanup — enable() replaces it.)
+                if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_codeLens) then
+                        vim.lsp.codelens.enable(true, { bufnr = ev.buf })
+                        vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, { buffer = ev.buf, desc = "Run code lens" })
+                end
         end,
 })
 
